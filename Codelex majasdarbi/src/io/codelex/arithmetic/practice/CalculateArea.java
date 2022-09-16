@@ -61,7 +61,7 @@ public class CalculateArea {
         Scanner keyboard = new Scanner(System.in);
 
         System.out.print("What is the circle's radius? ");
-        radius = BigDecimal.valueOf(keyboard.nextDouble());
+        radius = keyboard.nextBigDecimal();
 
         if (radius.compareTo(BigDecimal.ZERO) < 0) {
             System.out.println("Error, please don't use negative numbers.");
@@ -81,11 +81,11 @@ public class CalculateArea {
 
         // Get length
         System.out.print("Enter length? ");
-        length = BigDecimal.valueOf(keyboard.nextDouble());
+        length = keyboard.nextBigDecimal();
 
         // Get width
         System.out.print("Enter width? ");
-        width = BigDecimal.valueOf(keyboard.nextDouble());
+        width = keyboard.nextBigDecimal();
 
         if (length.compareTo(BigDecimal.ZERO) < 0 || width.compareTo(BigDecimal.ZERO) < 0) {
             System.out.println("Error, please don't use negative numbers.");
@@ -106,11 +106,11 @@ public class CalculateArea {
 
         // Get the base
         System.out.print("Enter length of the triangle's base? ");
-        base = BigDecimal.valueOf(keyboard.nextDouble());
+        base = keyboard.nextBigDecimal();
 
         // Get the height
         System.out.print("Enter triangle's height? ");
-        height = BigDecimal.valueOf(keyboard.nextDouble());
+        height = keyboard.nextBigDecimal();
 
         if (base.compareTo(BigDecimal.ZERO) < 0 || height.compareTo(BigDecimal.ZERO) < 0) {
             System.out.println("Error, please don't use negative numbers.");

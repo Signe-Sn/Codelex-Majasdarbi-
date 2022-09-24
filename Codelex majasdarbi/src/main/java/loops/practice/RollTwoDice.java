@@ -4,10 +4,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class RollTwoDice {
+    static Random TWO_DICE = new Random();
     public static void main(String[] args) {
-        Random twoDice = new Random();
-        int min = 1;
-        int max = 6;
+
         int sum = 0;
         int wantedNum;
 
@@ -17,10 +16,14 @@ public class RollTwoDice {
         System.out.println("Desired sum is " + wantedNum);
 
         do {
-            int diceRoll = twoDice.nextInt((max - min) + 1) + 1;
-            int diceRoll2 = twoDice.nextInt((max - min) + 1) + 1;
+            int diceRoll = rollDice(1,6);
+            int diceRoll2 = rollDice(1,6);
             sum = diceRoll + diceRoll2;
             System.out.println(diceRoll + " and " + diceRoll2 + " = " + sum);
         } while (sum != wantedNum);
+    }
+
+    public static int rollDice (int min, int max) {
+        return TWO_DICE.nextInt((max - min) + 1) + 1;
     }
 }

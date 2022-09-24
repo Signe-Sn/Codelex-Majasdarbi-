@@ -3,6 +3,8 @@ package loops.practice;
 import java.util.Scanner;
 
 public class Exercise5 {
+
+    private static final int LINES = 30;
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the first word: ");
@@ -16,9 +18,9 @@ public class Exercise5 {
         String dots = "";
         int characters = 0;
 
-        if (count <= 30){
-            characters = 30 - count;
-            for(int i = 1; i<=characters; i++){
+        if (count <= LINES) {
+            characters = LINES - count;
+            for (int i = 1; i <= characters; i++) {
                 dots += ".";
             }
             System.out.println(firstWord + dots + secondWord);

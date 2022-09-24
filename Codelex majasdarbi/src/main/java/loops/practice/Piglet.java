@@ -25,7 +25,7 @@ public class Piglet {
                 pig.close();
 
             }
-            userChoice = pig.next();
+            userChoice = pig.next().toLowerCase();
 
             if (userChoice.equals("no")) {
                 System.out.println("You got " + points + " points!");

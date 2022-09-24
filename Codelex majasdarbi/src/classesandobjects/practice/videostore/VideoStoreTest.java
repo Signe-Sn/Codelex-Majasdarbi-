@@ -3,7 +3,7 @@ package classesandobjects.practice.videostore;
 import java.util.Scanner;
 
 public class VideoStoreTest {
-    private static final int COUNT_OF_MOVIES = 3;
+    private static final int COUNT_OF_MOVIES = 1;
     static VideoStore videoStore = new VideoStore();
 
     public static void main(String[] args) {
@@ -35,12 +35,13 @@ public class VideoStoreTest {
                     break;
                 case 4:
                     rateVideo(keyboard);
+                    break;
                 case 5:
                     listInventory(keyboard);
+                    break;
                 default:
                     break;
             }
-
         }
     }
 
@@ -48,9 +49,7 @@ public class VideoStoreTest {
         for (int i = 0; i < COUNT_OF_MOVIES; i++) {
             System.out.println("Enter movie name");
             String movieName = scanner.next();
-            System.out.println("Enter rating");
-            int rating = scanner.nextInt();
-            videoStore.addVideoToInventory(movieName, rating);
+            videoStore.addVideoToInventory(movieName);
         }
     }
 
@@ -71,9 +70,9 @@ public class VideoStoreTest {
         String movieName = scanner.next();
         System.out.println("Enter movie rating");
         int movieRating = scanner.nextInt();
-        Video video = new Video(movieName, movieRating);
-        video.addRating(movieRating);
-    }
+        videoStore.giveRating(movieName, movieRating);
+        }
+
 
     private static void listInventory(Scanner scanner) {
         videoStore.printInventory();

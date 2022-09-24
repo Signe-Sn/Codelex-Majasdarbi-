@@ -3,15 +3,12 @@ package classesandobjects.practice.videostore;
 public class Video {
 
     private String title;
-    private boolean isCheckedIn;
-    private int averageRating;
+    private boolean isCheckedIn = true;
+    private int averageUserRating = 0;
+    private int numOfRatings = 0;
 
-    int numberOfRatings = 0;
-    int totalRatings = 0;
-
-    public Video(String title, int averageRating) {
+    public Video(String title) {
         this.title = title;
-        this.averageRating = averageRating;
     }
 
     public String getTitle() {
@@ -22,7 +19,11 @@ public class Video {
         this.isCheckedIn = true;
     }
 
-    public boolean isCheckedIn(){
+    public void checkOut() {
+        this.isCheckedIn = false;
+    }
+
+    public boolean isCheckedIn() {
         if (this.isCheckedIn) {
             return true;
         } else {
@@ -30,18 +31,12 @@ public class Video {
         }
     }
 
-    public void checkOut() {
-        this.isCheckedIn = false;
+    public void addRating (int rating){
+        averageUserRating = ((averageUserRating * numOfRatings) + rating) / (numOfRatings + 1);
+        numOfRatings++;
     }
 
-    public void addRating(int rating) {
-        this.totalRatings += rating;
-        numberOfRatings++;
-        this.averageRating = this.totalRatings / this.numberOfRatings;
+    public int getAverageUserRating() {
+        return averageUserRating;
     }
-
-    public int getAverageRating(){
-        return averageRating;
-    }
-
 }

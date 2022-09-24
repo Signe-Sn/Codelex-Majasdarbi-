@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Hangman {
 
     static String misses = "";
-    static String gameStart = "yes";
     static String randomWord;
     static ArrayList<Character> allGuesses = new ArrayList<>();
     static Scanner input = new Scanner(System.in);
@@ -15,16 +14,16 @@ public class Hangman {
 
     public static void main(String[] args) {
 
-        String[] words = {"leviathan", "rainbow", "mushroom", "apocalypse", "catastrophe", "dictatorship"};
-        Random random = new Random();
-        int randomNumber = random.nextInt(words.length);
-        randomWord = words[randomNumber];
-
         int wrongCount = 0;
+        boolean gameStart = true;
 
-        while (gameStart.equals("yes")) {
+        while (gameStart) {
+
+            randomGenerator();
             guessedLetterList();
+
             while (true) {
+
                 if (wrongCount >= 15) {
                     System.out.println("You lose!");
                     break;
@@ -38,13 +37,13 @@ public class Hangman {
                 }
                 System.out.println("Misses: " + misses);
             }
+
             System.out.println("Play \"again\" or \"quit\"? quit");
             String starGame = input.nextLine();
-            if (starGame.equals("again")) {
-                gameStart = "yes";
+            if (starGame.equals("quit")) {
+                gameStart = false;
             } else {
-                gameStart = "no";
-                break;
+                allGuesses.clear();
             }
         }
     }
@@ -60,6 +59,14 @@ public class Hangman {
         }
 
         return randomWord.contains(guessLetter);
+    }
+
+    public static String randomGenerator() {
+        String[] words = {"leviathan", "rainbow", "mushroom", "apocalypse", "catastrophe", "dictatorship"};
+        Random random = new Random();
+        int randomNumber = random.nextInt(words.length);
+        randomWord = words[randomNumber];
+        return randomWord;
     }
 
     private static boolean guessedLetterList() {

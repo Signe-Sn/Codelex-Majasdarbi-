@@ -9,8 +9,8 @@ public class TicTacToe {
     public static void main(String[] args) {
 
         initBoard();
-        int row = 0;
-        int col = 0;
+        int row;
+        int col;
         boolean playerX = true;
         boolean gameEnded = false;
         char symbol = ' ';

@@ -3,7 +3,7 @@ package classesandobjects.practice.videostore;
 import java.util.Scanner;
 
 public class VideoStoreTest {
-    private static final int COUNT_OF_MOVIES = 1;
+    private static final int COUNT_OF_MOVIES = 3;
     static VideoStore videoStore = new VideoStore();
 
     public static void main(String[] args) {

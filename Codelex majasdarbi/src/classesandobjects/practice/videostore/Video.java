@@ -24,11 +24,7 @@ public class Video {
     }
 
     public boolean isCheckedIn() {
-        if (this.isCheckedIn) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.isCheckedIn;
     }
 
     public void addRating (int rating){

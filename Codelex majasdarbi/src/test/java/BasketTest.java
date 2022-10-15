@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BasketTest {
 
-
     @Test
     void basketTest() throws BasketFullException {
         Basket<Apple> appleBasket = new Basket<>();
@@ -20,13 +19,28 @@ public class BasketTest {
     }
 
     @Test
-
-    public void testEmptyBasket() throws BasketFullException, BasketEmptyException {
+    void testEmptyBasket() {
         Basket<Apple> basket = new Basket<>();
-        basket.addToBasket(new Apple());
 
         Exception exception = assertThrows(BasketEmptyException.class, () -> basket.removeFromBasket(0));
         assertEquals("Basket is empty!", exception.getMessage());
+    }
 
+    @Test
+    void testFullBasket() throws BasketFullException {
+        Basket<Apple> basket = new Basket<>();
+        basket.addToBasket(new Apple());
+        basket.addToBasket(new Apple());
+        basket.addToBasket(new Apple());
+        basket.addToBasket(new Apple());
+        basket.addToBasket(new Apple());
+        basket.addToBasket(new Apple());
+        basket.addToBasket(new Apple());
+        basket.addToBasket(new Apple());
+        basket.addToBasket(new Apple());
+        basket.addToBasket(new Apple());
+
+        Exception exception = assertThrows(BasketFullException.class, () -> basket.addToBasket(new Apple()));
+        assertEquals("Basket is full", exception.getMessage());
     }
 }

@@ -1,6 +1,3 @@
-package Exercise5;
-
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
@@ -12,7 +9,7 @@ public class Exercise5 {
         long count = list.stream().filter(function).count();
         return (double) count / list.size();
     }
-
+    
     public static void main(String[] args) {
 
         List<String> names = Arrays.asList("John", "Peter", "Angelina", "Bravo");

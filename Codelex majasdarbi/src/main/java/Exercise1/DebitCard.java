@@ -7,7 +7,6 @@ public class DebitCard extends Card {
         super(cardNumber, ownersFullName, ccvCode, balance);
     }
 
-
     @Override
     public void addMoney(double money) {
         if (this.balance > 10000) {
@@ -21,9 +20,9 @@ public class DebitCard extends Card {
         try {
             if (this.balance <= 0) {
                 throw new NotEnoughFundsException("");
+            } else {
+                this.balance -= money;
             }
-            this.balance -= money;
-
         } catch (NotEnoughFundsException e) {
             System.out.println("Cannot withdraw money!");
         }

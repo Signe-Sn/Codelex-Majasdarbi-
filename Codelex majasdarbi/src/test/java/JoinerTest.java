@@ -1,4 +1,3 @@
-import Exercise3.Joiner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

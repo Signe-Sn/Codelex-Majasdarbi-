@@ -30,6 +30,6 @@ public class CharacterToStringCollector implements Collector<Character, StringBu
 
     @Override
     public Set<Characteristics> characteristics() {
-        return Set.of(Characteristics.CONCURRENT);
+        return Set.of();
     }
 }

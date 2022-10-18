@@ -11,7 +11,8 @@ import java.util.stream.Stream;
 public class StreamsExercise {
     public static List<Integer> returnSquareRoot(List<Integer> numbers) {
         return numbers.stream()
-                .map(a -> Math.toIntExact((long)Math.sqrt(a)))
+                .map(Math::sqrt)
+                .map(Double::intValue)
                 .toList();
     }
 
@@ -79,8 +80,8 @@ public class StreamsExercise {
     }
 
     public static double getAverageAge(List<User> users) {
-        return users.stream().mapToInt(User::getAge)
-                .sum() / (double)users.size();
+        return users.stream()
+                .collect(Collectors.averagingDouble(User::getAge));
     }
 
     public static Integer getMaxAge(List<User> users) {

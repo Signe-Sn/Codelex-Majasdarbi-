@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class Exercise6 {
     public static void main(String[] args) {
 
-
         int[] myArr = new int[10];
         int[] myArr2 = new int[10];
 
@@ -17,10 +16,9 @@ public class Exercise6 {
             myArr2[i] = myArr[i];
         }
 
-        myArr[9] = -7;
+        myArr[myArr.length -1] = -7;
 
         System.out.println(Arrays.toString(myArr));
         System.out.println(Arrays.toString(myArr2));
-
     }
 }

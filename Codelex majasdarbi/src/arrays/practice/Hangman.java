@@ -13,6 +13,7 @@ public class Hangman {
 
 
     public static void main(String[] args) {
+        int maxMoves = 15;
 
         int wrongCount = 0;
         boolean gameStart = true;
@@ -24,7 +25,7 @@ public class Hangman {
 
             while (true) {
 
-                if (wrongCount >= 15) {
+                if (wrongCount >= maxMoves) {
                     System.out.println("You lose!");
                     break;
                 }
@@ -80,6 +81,6 @@ public class Hangman {
             }
         }
         System.out.println();
-        return (randomWord.length() == correctGuessCount);
+        return randomWord.length() == correctGuessCount;
     }
 }

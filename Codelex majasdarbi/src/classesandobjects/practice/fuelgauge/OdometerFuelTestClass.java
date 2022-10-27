@@ -8,7 +8,7 @@ public class OdometerFuelTestClass {
         fuel.puttingFuelInCar();
 
         while (fuel.getLiters() > 0){
-            odometer.increasingMileage();
+            odometer.increasingMileage(fuel);
             System.out.println("Cars current mileage is " + odometer.getMileage() +
                                 " and the current amount of liters ir: " + fuel.getLiters());
         }

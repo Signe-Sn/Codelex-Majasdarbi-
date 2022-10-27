@@ -1,9 +1,8 @@
 package classesandobjects.practice.savingsaccount;
 
 public class SavingsAccount {
-    public double annualInterestRate;
-    public double balance;
-    public double startingBalance;
+    private double annualInterestRate;
+    private double balance;
 
     public SavingsAccount(double startingBalance) {
         this.balance = startingBalance;

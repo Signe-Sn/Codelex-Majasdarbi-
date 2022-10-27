@@ -1,7 +1,8 @@
 package classesandobjects.practice.fuelgauge;
 
 public class FuelGauge {
-    static double liters;
+    private static double liters;
+
 
     public FuelGauge(double liters) {
         FuelGauge.liters = liters;
@@ -12,7 +13,8 @@ public class FuelGauge {
     }
 
     public static void puttingFuelInCar() {
-        if (liters < 70) {
+        int maxLiterCapacity = 70;
+        if (liters < maxLiterCapacity) {
             liters++;
         } else {
             System.out.println("Fuel reached maximum capacity.");

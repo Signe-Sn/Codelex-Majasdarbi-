@@ -5,8 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class DatePeriod {
 
-    LocalDate startOfPeriod;
-    LocalDate endOfPeriod;
+    private LocalDate startOfPeriod;
+    private LocalDate endOfPeriod;
 
     public DatePeriod(LocalDate start, LocalDate end) {
         this.startOfPeriod = start;

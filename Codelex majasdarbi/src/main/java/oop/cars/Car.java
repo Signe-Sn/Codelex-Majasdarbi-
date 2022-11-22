@@ -12,7 +12,7 @@ public class Car {
 
     private final EngineType engineType;
 
-    ArrayList<Manufacturer> manufacturerList = new ArrayList<>();
+    private ArrayList<Manufacturer> manufacturerList = new ArrayList<>();
 
     public Car(String name, String model, int price, int yearOfManufacture, Manufacturer manufacturer, EngineType engineType) {
         this.name = name;
@@ -23,7 +23,7 @@ public class Car {
         manufacturerList.add(manufacturer);
     }
 
-    public void addManufacturer(Manufacturer manufacturer){
+    public void addManufacturer(Manufacturer manufacturer) {
         manufacturerList.add(manufacturer);
     }
 
@@ -51,6 +51,7 @@ public class Car {
         return yearOfManufacture;
     }
 
+
     @Override
     public String toString() {
         return "Car: " + name + ", model: " + model + ", price: " + price + ", year of manufacture: " + yearOfManufacture + "; " + getManufacturerList();
@@ -61,7 +62,10 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return price == car.price && yearOfManufacture == car.yearOfManufacture && Objects.equals(name, car.name) && Objects.equals(model, car.model) && Objects.equals(manufacturerList, car.manufacturerList);
+        return price == car.price && yearOfManufacture == car.yearOfManufacture
+                && Objects.equals(name, car.name)
+                && Objects.equals(model, car.model)
+                && Objects.equals(manufacturerList, car.manufacturerList);
     }
 
     @Override

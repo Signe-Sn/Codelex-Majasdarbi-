@@ -24,17 +24,22 @@ public class Exercise2 {
         LocalDate launchDate = LocalDate.of(launchYear, launchMonth, launchDay);
         LocalDate updateSchedule = LocalDate.of(yearOfUpdate, monthOfUpdate, 1);
 
-        returnUpdates(launchDate,updateSchedule);
+        returnUpdates(launchDate, updateSchedule);
     }
 
     private static void returnUpdates(LocalDate launchDate, LocalDate updateSchedule) {
         LocalDate nextUpdates = launchDate;
         while (nextUpdates.isBefore(updateSchedule.plusMonths(1))) {
             nextUpdates = nextUpdates.plusDays(14);
-            if(nextUpdates.isAfter(launchDate) && nextUpdates.getMonthValue() == updateSchedule.getMonthValue() && nextUpdates.getYear() == launchDate.getYear()){
+            if (helperMethod(nextUpdates, launchDate, updateSchedule)) {
                 System.out.println(nextUpdates);
             }
         }
+    }
+
+    public static boolean helperMethod(LocalDate nextUpdates, LocalDate launchDate, LocalDate updateSchedule) {
+        return nextUpdates.isAfter(launchDate) && nextUpdates.getMonthValue() == updateSchedule.getMonthValue()
+                && nextUpdates.getYear() == launchDate.getYear();
     }
 }
 

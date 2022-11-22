@@ -27,15 +27,15 @@ public class CarTest {
         balta.addManufacturer(MERCEDES);
         balta.addManufacturer(BRAUCAM);
 
-        System.out.println("Cheapest car: " + service.getCheapestCar());
-        System.out.println("Most expensive car: " + service.getMostExpensiveCar());
-        System.out.println("Car with most manufacturers: " + service.getCarWithMostManufacturers());
-        System.out.println("Cars with V12 engines: " + service.getCarsWithV12Engine());
-        System.out.println("Cars made before 1999: " + service.getCarsMadeBefore1999());
-        System.out.println("List of all cars: " + service.getListOfCars());
-        System.out.println("List of cars with a specific manufacturer: " + service.printCarWithManufacturer(WROOMWROOM));
-        System.out.println("Sort cars by price: " + service.sortByPrice("descending"));
-        System.out.println("Check if car is in the list by name: " + service.checkIfCarIsInTheList("Zala"));
-        System.out.println("Find all cars by manufacturer establishment date: " + service.getCarByManuEstablishment("<", 1920));
+//        System.out.println("Cheapest car: " + service.getCheapestCar());
+//        System.out.println("Most expensive car: " + service.getMostExpensiveCar());
+//        System.out.println("Car with most manufacturers: " + service.getCarWithMostManufacturers());
+//        System.out.println("Cars with V12 engines: " + service.getCarsByEngineType(EngineType.V12));
+        System.out.println("Cars made before 1999: " + service.getCarsMadeBeforeYear(1999));
+//        System.out.println("List of all cars: " + service.getListOfCars());
+//        System.out.println("List of cars with a specific manufacturer: " + service.printCarWithManufacturer(WROOMWROOM));
+//        System.out.println("Sort cars by price: " + service.sortByPrice("descending"));
+//        System.out.println("Check if car is in the list by name: " + service.checkIfCarIsInTheList("Zala"));
+//        System.out.println("Find all cars by manufacturer establishment date: " + service.getCarByManuEstablishment("<", 1920));
     }
 }

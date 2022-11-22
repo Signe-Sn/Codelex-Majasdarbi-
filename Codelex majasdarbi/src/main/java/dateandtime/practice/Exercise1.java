@@ -16,6 +16,7 @@ public class Exercise1 {
     }
 
     public static long hoursWorked(LocalDate startDate, LocalDate endDate) {
+        int maxHoursPerDay = 8;
 
 
         List<LocalDate> latvianHolidays = new ArrayList<>();   //Gribēju iekļaut brīvdienas
@@ -40,7 +41,7 @@ public class Exercise1 {
                 .filter(day -> !weekend.contains(day.getDayOfWeek()) && !latvianHolidays.contains(day))
                 .count();
 
-        return weekdays * 8;
+        return weekdays * maxHoursPerDay;
 
     }
 }

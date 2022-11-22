@@ -6,25 +6,21 @@ import java.util.List;
 
 public class CarService {
 
-    ArrayList<Car> listOfCars = new ArrayList<>();
+    private ArrayList<Car> listOfCars = new ArrayList<>();
 
     public void addCarToList(Car car) {
         listOfCars.add(car);
     }
 
-    public void removeCarFromList(Car car) {
-        listOfCars.remove(car);
-    }
-
-    public List<Car> getCarsWithV12Engine() {
+    public List<Car> getCarsByEngineType(EngineType engineType) {
         return listOfCars.stream()
-                .filter(car -> car.getEngineType() == EngineType.V12)
+                .filter(car -> car.getEngineType() == engineType)
                 .toList();
     }
 
-    public List<Car> getCarsMadeBefore1999() {
+    public List<Car> getCarsMadeBeforeYear(int year) {
         return listOfCars.stream()
-                .filter(car -> car.getYearOfManufacture() <= 1999)
+                .filter(car -> car.getYearOfManufacture() <= year)
                 .toList();
     }
 
@@ -57,7 +53,7 @@ public class CarService {
 
     public List<Car> getCarWithMostManufacturers() {
         return listOfCars.stream()
-                .filter(car -> car.manufacturerList.size() >= 3)
+                .filter(car -> car.getManufacturerList().size() >= 3)
                 .toList();
     }
 
